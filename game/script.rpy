@@ -12,6 +12,7 @@ define unknown = Character('UNKNOWN', color="#c8ffc8")
 
 image bg uni = "resources/backgrounds/uni.jpg"
 image bg dorm = "resources/backgrounds/dorm_hallway.jpg"
+image bg bedroom dark = "resources/backgrounds/bedroom_dark.jpg"
 image bg bedroom = "resources/backgrounds/bedroom.jpg"
 
 image side lain = "resources/characters/lain/lain_relaxed_side.png"
@@ -123,13 +124,13 @@ label bakerhouse:
     "You've never felt 'human' before, but around him you're alright with that."
 
 
-    jump bedroom
+    jump bedroom_night
 
-label bedroom:
-    show bg bedroom
+label bedroom_night:
+    show bg bedroom dark
     with fade
 
-    scene bg bedroom
+    scene bg bedroom dark
 
     "It's a lot nicer than you expected."
     "You sit on the bed, and although you're tired you want to read the book he gave you."
