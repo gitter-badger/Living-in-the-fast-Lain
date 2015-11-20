@@ -10,9 +10,11 @@ Renpy - Python VN Engine. Open the project using Renpy. (No builds at this stage
 ##Screenshots:
 
 Menu:
+
 ![Menu](/screenshots/menu.png)
 
 Meeting Stallman:
+
 ![Stallman](/screenshots/stallman.png)
 
 ##Contribute
