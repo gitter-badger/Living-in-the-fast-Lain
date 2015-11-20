@@ -208,7 +208,6 @@ init -1 python hide:
 
     ## Used when entering the game menu from the game.
     config.enter_transition = None
-
     ## Used when exiting the game menu to the game.
     config.exit_transition = None
 
@@ -262,7 +261,7 @@ init -1 python hide:
     ## stored. (It needs to be set early, before any other init code
     ## is run, so the persistent information can be found by the init code.)
 python early:
-    config.save_directory = "ILY Lain-1447978262"
+    config.save_directory = "Living in the fast Lain-1447978262"
 
 init -1 python hide:
     #########################################
@@ -286,3 +285,4 @@ init -1 python hide:
 
     #########################################
     ## More customizations can go here.
+    config.windows_icon = "icon.png"

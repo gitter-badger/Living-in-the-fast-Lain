@@ -1,7 +1,7 @@
 #Living in the Fast Lain
 
 ##Description:
-You play as Lain Iwakura, a Japanese exchange student who has just transferred to MIT! She develops a unique friendship (and maybe more?) with none other than Richard Stallman. 
+You play as Lain Iwakura, a 19 year old Japanese exchange student who has just transferred to MIT! She develops a unique friendship (and maybe more?) with none other than Richard Stallman. 
 
 ## Requirements:
 
