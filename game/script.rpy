@@ -12,6 +12,7 @@ define unknown = Character('UNKNOWN', color="#c8ffc8")
 
 image bg uni = "resources/backgrounds/uni.jpg"
 image bg dorm = "resources/backgrounds/dorm_hallway.jpg"
+image bg bedroom = "resources/backgrounds/bedroom.jpg"
 
 image side lain = "resources/characters/lain/lain_relaxed_side.png"
 
@@ -32,7 +33,7 @@ label start:
 
     stop music
     scene bg uni
-    "This is it. Your first day of school at the famous MIT!"
+    "This is it. Your first day at the famous MIT!"
     "It's been a long day at orientation, and you want nothing more than to sleep."
     "Though you're not entirely sure where you live..."
 
@@ -53,6 +54,7 @@ label start:
         "Yes - I have heard of you!":
             stallman "Ah good! What religion are you?"
             lain "R-religion?!"
+            ## TODO: MAKE MULTIPLE CHOICE ON WHAT EDITOR LAIN USES. *****************************
             stallman "Yeah! The Church of EMACS or the dirty Cult of VI?"
             lain "N-neither... We used Sublime Text at my last university."
             show stallman shocked
@@ -116,3 +118,24 @@ label bakerhouse:
             hide stallman angry
             with moveoutright
             #Add door slamming sound effect.
+
+    "Even though he's been eccentric, you feel a strange affection for him."
+    "You've never felt 'human' before, but around him you're alright with that."
+
+
+    jump bedroom
+
+label bedroom:
+    show bg bedroom
+    with fade
+
+    scene bg bedroom
+
+    "It's a lot nicer than you expected."
+    "You sit on the bed, and although you're tired you want to read the book he gave you."
+    # menu:
+    #     "Read SICP":
+
+    #     "Fall asleep":
+    #         "You lie down on the bed. Almost the second you do, you fall asleep. You must've needed it!"
+
