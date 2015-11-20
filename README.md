@@ -5,7 +5,7 @@ You play as Lain Iwakura, a Japanese exchange student who has just transferred t
 
 ## Requirements:
 
-Renpy - Python VN Engine. Open the project using Renpy to place. (No builds at this stage.)
+Renpy - Python VN Engine. Open the project using Renpy. (No builds at this stage.)
 
 ##Screenshots:
 
