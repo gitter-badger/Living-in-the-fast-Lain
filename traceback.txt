@@ -1,24 +1,21 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-IOError: [Errno 13] Permission denied: 'C:\\Users\\Doctor Doom\\AppData\\Roaming/RenPy/ILY Lain-1447978262\\persistent.new'
+  File "game/script.rpy", line 139, in <module>
+    $ import browser
+ImportError: No module named browser
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\bootstrap.py", line 281, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\main.py", line 466, in main
-    renpy.persistent.update(True)
-  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\persistent.py", line 359, in update
-    save()
-  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\persistent.py", line 373, in save
-    renpy.loadsave.location.save_persistent(data)
-  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\savelocation.py", line 464, in save_persistent
-    l.save_persistent(data)
-  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\savelocation.py", line 329, in save_persistent
-    with open(fn_new, "wb") as f:
-IOError: [Errno 13] Permission denied: 'C:\\Users\\Doctor Doom\\AppData\\Roaming/RenPy/ILY Lain-1447978262\\persistent.new'
+  File "lib/windows-i686/script.rpyc", line 139, in script
+  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\ast.py", line 805, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Doctor Doom\Desktop\renpy\renpy-6.99.7-sdk\renpy\python.py", line 1460, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 139, in <module>
+    $ import browser
+ImportError: No module named browser
 
 Windows-7-6.1.7601-SP1
 Ren'Py 6.99.7.858

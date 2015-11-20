@@ -103,7 +103,7 @@ label bakerhouse:
     menu:
         "Yes - Sure you can!":
             $ gave_email = True
-            "You read our your email, and stallman quickly scribbles it down."
+            "You read ouy your email, and stallman quickly scribbles it down."
             stallman "Thanks!"
             "Before you can even say anything, he scurries away in to his room."
             hide stallman relaxed
@@ -133,9 +133,12 @@ label bedroom:
 
     "It's a lot nicer than you expected."
     "You sit on the bed, and although you're tired you want to read the book he gave you."
-    # menu:
-    #     "Read SICP":
 
-    #     "Fall asleep":
-    #         "You lie down on the bed. Almost the second you do, you fall asleep. You must've needed it!"
+    menu:
+        "Read SICP":
+            $ import webbrowser
+            $ webbrowser.open("http://sarabander.github.io/sicp/html/index.xhtml")
+            "If everything went to plan, your browser opened at SICP. Read it then!"
+        "Fall asleep":
+            "You lie down on the bed. Almost the second you do, you fall asleep. You must've needed it!"
 
