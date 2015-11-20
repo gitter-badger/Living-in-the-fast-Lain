@@ -181,6 +181,7 @@ label hall_morning:
     with moveinright
 
     stallman "LAIN! YOU'RE HERE. WE'RE GOING TO EB LATE, LETS HURRY!!!"
+    hide stallman
     jump lecture_hall_1
 
 
