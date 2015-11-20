@@ -47,4 +47,4 @@ THE SOFTWARE.
 
 ##Contributors
 
-[@MrDetonia](https://github.com/MrDetonia)
+[@MrDetonia](https://github.com/MrDetonia) - Main Menu.
