@@ -9,7 +9,8 @@
 define lain = Character('Lain', color="#c8ffc8", image="lain")
 define stallman = Character('Stallman', color="#c8ffc8", image="stallman")
 define unknown = Character('UNKNOWN', color="#c8ffc8")
-define linus = Character("Linus", color="#c8ffc8", image="linus")
+define torvalds = Character("torvalds", color="#c8ffc8", image="torvalds")
+define jobs = Character("Steve Jobs", color="#c8ffc8", image="jobs")
 
 image bg uni = "resources/backgrounds/uni.jpg"
 image bg dorm = "resources/backgrounds/dorm_hallway.jpg"
@@ -25,7 +26,7 @@ image side stallman shocked = "resources/characters/stallman/stallman_shocked_si
 image side stallman embarrassed = "resources/characters/stallman/stallman_embarrassed_side.png"
 image side stallman angry = "resources/characters/stallman/stallman_side_angry.png"
 
-image side linus = "resources/characters/linus/linus_side.png"
+image side torvalds = "resources/characters/torvalds/torvalds_side.png"
 
 image stallman relaxed = "resources/characters/stallman/stallman.png"
 image stallman shocked = "resources/characters/stallman/stallman_shocked.png"
@@ -33,8 +34,14 @@ image stallman embarrassed = "resources/characters/stallman/stallman_embarrassed
 image stallman sicp = "resources/characters/stallman/stallman_sicp.png"
 image stallman angry = "resources/characters/stallman/stallman_angry.png"
 
-image linus relaxed = "resources/characters/linus/linus.png"
-image linus angry = "resources/characters/linus/linus_angry.png"
+image torvalds relaxed = "resources/characters/torvalds/torvalds.png"
+image torvalds angry = "resources/characters/torvalds/torvalds_angry.png"
+image torvalds card = "resources/characters/torvalds/torvalds_card.png"
+
+image jobs = "resources/characters/jobs/jobs.png"
+image side jobs = "resources/characters/jobs/jobs_side.jpg"
+image jobs gun = "resources/characters/jobs/jobs_gun.png"
+image jobs gun fire = "resources/characters/jobs/jobs_gun_fire.png"
 # The game starts here.
 label start:
     $ gave_email = False
@@ -194,20 +201,71 @@ label lecture_hall_1:
     "You take your seat, and the lecturer starts speaking."
 
     scene bg lecture_front
-    show linus relaxed
-    linus "Hello! I am Linus Torvalds, and I will be teaching your 'systems programming' class."
-    stallman "I hate this dick."
-    show linus angry
-    linus "FUCK YOU STALLMAN!"
-    show linus relaxed
-    stallman "FUCK YOU LINUS!"
-    show linus angry
-    linus "No, FUCK YOU STALLMAN!"
-    show linus relaxed
-    linus "Why are you even here? You graduated like 40 years ago."
-    stallman "FUCK YOU!"
-    show linus angry
-    linus "Fuuuuuuuuuuuuckkkk yooooooooooooooooouuuuu"
+    show torvalds relaxed
+    torvalds "Hello! I am Linus Torvalds, and I will be teaching your 'systems programming' class."
+    "Your sleep left you feeling strangely unrested. You can't keep your eyes open any longer."
+
+    hide torvalds relaxed
+    show bg lecture_front
+    with fade
+    #Add yawn
+    "Oh shit. How long have you been asleep?"
+    "You look around. Nobody is here. Even Stallman has left. Maybe it's time to go back."
+
+    show bg lecture_hall
+    with dissolve
+
+    "As you try and leave, you hear a rushing sound from your side."
+    show torvalds relaxed
+    with moveinleft
+    torvalds "It can't be! Lain?!?!"
+    lain "How did you know my name?"
+    torvalds "I saw you in the crowd!"
+    torvalds "We can't talk here. Here's my card. Call me!"
+    hide torvalds relaxed
+    with moveoutright
+
+    show torvalds card
+    hide torvalds card
+    with dissolve
+
+    "This was too weird. You better go back and have a nap."
+    jump jobs_rob_1
+
+label jobs_rob_1:
+    scene bg uni
+    show jobs 
+    "On your way back, you get stopped by a strange person."
+    jobs "Hey kid, give me all your lunch money!"
+    lain "I-i don't have any money."
+    jobs "THEN PRAISE MR SKELETAL"
+    lain "w-what?"
+    jobs "SAY 'thank you mr skeletal' RIGHT FUCKING NOW."
+    menu:
+        "Thank you Mr Skeletal!":
+            jobs "Alright then. You can go now."
+        "N-no I wont do it.":
+            hide jobs
+            show jobs gun
+            jobs "You think this is a fucking joke?!?!"
+            jobs "PRAISE MR SKELETAL OR I'LL BLOW YOUR FUCKING BRAINS OUT"
+            menu:
+                "THANK YOU MR SKELETAL":
+                    job "You're real fucking lucky kid. Get out of here."
+                "NO!":
+                    hide jobs gun
+                    show jobs gun fire
+                    "*BLAOW*"
+                    hide jobs gun fire
+                    show jobs gun
+                    "You feel a burning sensation in your chest... you've been shot."
+                    "This is it. You finally get to meet Mr Skeletal yourself."
+                    "GG"
+                    "No re."
+                    return
+
+
+
 
 
 
