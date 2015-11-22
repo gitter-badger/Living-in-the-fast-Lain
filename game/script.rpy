@@ -12,22 +12,34 @@ define unknown = Character('UNKNOWN', color="#c8ffc8")
 define torvalds = Character("torvalds", color="#c8ffc8", image="torvalds")
 define jobs = Character("Steve Jobs", color="#c8ffc8", image="jobs")
 
+#Scene backgrounds:
+#Background of the Uni.
 image bg uni = "resources/backgrounds/uni.jpg"
+#Dorm background
 image bg dorm = "resources/backgrounds/dorm_hallway.jpg"
+#Lain's bedroom, only dark.
 image bg bedroom dark = "resources/backgrounds/bedroom_dark.jpg"
+#Lain's bedroom.
 image bg bedroom = "resources/backgrounds/bedroom.jpg"
+#The entrance of the lecture hall.
 image bg lecture_hall = "resources/backgrounds/lecture_hall.jpg"
+#The lecture hall from the perspective of Lain's seat.
 image bg lecture_front = "resources/backgrounds/lecture_front.png"
 
+#Side images are the small profiles when the character talks.
+#Lain has only one picture.
 image side lain = "resources/characters/lain/lain_relaxed_side.png"
+image side torvalds = "resources/characters/torvalds/torvalds_side.png"
+image side jobs = "resources/characters/jobs/jobs_side.jpg"
 
+
+#Load all of RMS's side expressions.
 image side stallman = "resources/characters/stallman/stallman_side.png"
 image side stallman shocked = "resources/characters/stallman/stallman_shocked_side.png"
 image side stallman embarrassed = "resources/characters/stallman/stallman_embarrassed_side.png"
 image side stallman angry = "resources/characters/stallman/stallman_side_angry.png"
 
-image side torvalds = "resources/characters/torvalds/torvalds_side.png"
-
+#All of Stallman's expressions.
 image stallman relaxed = "resources/characters/stallman/stallman.png"
 image stallman shocked = "resources/characters/stallman/stallman_shocked.png"
 image stallman embarrassed = "resources/characters/stallman/stallman_embarrassed.png"
@@ -39,16 +51,18 @@ image torvalds angry = "resources/characters/torvalds/torvalds_angry.png"
 image torvalds card = "resources/characters/torvalds/torvalds_card.png"
 
 image jobs = "resources/characters/jobs/jobs.png"
-image side jobs = "resources/characters/jobs/jobs_side.jpg"
 image jobs gun = "resources/characters/jobs/jobs_gun.png"
 image jobs gun fire = "resources/characters/jobs/jobs_gun_fire.png"
+
 # The game starts here.
 label start:
     $ gave_email = False
 
+    #Stops the music from the menu playing.
     stop music
     play music "resources/music/outofsilencev2.ogg"
     scene bg uni
+    #TODO: Make this better.
     "This is it. Your first day at the famous MIT!"
     "It's been a long day at orientation, and you want nothing more than to sleep."
     "Though you're not entirely sure where you live..."
@@ -66,6 +80,7 @@ label start:
 
     show stallman relaxed
     stallman "Oh jeeze, I've forgotten to introduce myself. I'm Richard Stallman, you might have heard of me?"
+
     menu:
         "Yes - I have heard of you!":
             stallman "Ah good! What religion are you?"
@@ -95,6 +110,7 @@ label start:
     stallman "Then you should have your textbook 'The Structure and Interpretation of Computer Programs'?"
     lain "No, sorry. I could not afford it."
 
+    #'with fade' kinda makes him flash a bit.
     show stallman sicp 
     with fade
     stallman "Here, you can have mine! Think of it as a gift between classmates, M'Lain-y."
@@ -104,6 +120,7 @@ label start:
     stallman "I'm getting hungry. Follow me!"
     jump bakerhouse_1
 
+#The first time you arrive at your dorm, bakerhouse.
 label bakerhouse_1:
     play sound "resources/sounds/door-open.wav"
     scene bg dorm
@@ -134,14 +151,14 @@ label bakerhouse_1:
             stallman "REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
             hide stallman angry
             with moveoutright
-            #Add door slamming sound effect.
+            #TODO: Add door slamming sound effect.
 
     "Even though he's been eccentric, you feel a strange affection for him."
     "You've never felt 'human' before, but around him you're alright with that."
 
-
     jump bedroom_night
 
+#This is your bedroom at night, after your interaction with stallman.
 label bedroom_night:
     show bg bedroom dark
     with fade
@@ -153,6 +170,7 @@ label bedroom_night:
 
     menu:
         "Read SICP":
+            #Opens your web browser at a HTML5 version of SICP.
             $ import webbrowser
             $ webbrowser.open("http://sarabander.github.io/sicp/html/index.xhtml")
             "If everything went to plan, your browser opened at SICP. Read it then!"
@@ -163,6 +181,7 @@ label bedroom_night:
 
     jump bedroom_morning
 
+#Your bedroom when you wake up.
 label bedroom_morning:
     show bg bedroom 
     with fade
@@ -182,6 +201,7 @@ label bedroom_morning:
     "You're all ready now. Lets try and find Stallmanu."
     jump hall_morning
 
+#Bakerhouse dorm hall, in the morning.
 label hall_morning:
     scene bg dorm
     lain "H-hello? Is anyone there?"
@@ -193,7 +213,7 @@ label hall_morning:
     hide stallman
     jump lecture_hall_1
 
-
+#First time Lain goes to a lecture.
 label lecture_hall_1:
     show bg lecture_hall
     with fade
@@ -234,6 +254,7 @@ label lecture_hall_1:
     "This was too weird. You better go back and have a nap."
     jump jobs_rob_1
 
+#The first time steve jobs robs you. Might happen more.
 label jobs_rob_1:
     scene bg uni
     show jobs 
@@ -245,7 +266,7 @@ label jobs_rob_1:
     jobs "SAY 'thank you mr skeletal' RIGHT FUCKING NOW."
     menu:
         "Thank you Mr Skeletal!":
-            jobs "Alright then. You can go now."
+            jobs "Good Lain. You can go now."
         "N-no I wont do it.":
             hide jobs
             show jobs gun
@@ -253,8 +274,10 @@ label jobs_rob_1:
             jobs "PRAISE MR SKELETAL OR I'LL BLOW YOUR FUCKING BRAINS OUT"
             menu:
                 "THANK YOU MR SKELETAL":
-                    job "You're real fucking lucky kid. Get out of here."
+                    jobs "You're real fucking lucky Lain. Get out of here."
                 "NO!":
+                    jobs "See you in hell, Lain."
+                    lain "How did you know my -"
                     hide jobs gun
                     show jobs gun fire
                     "*BLAOW*"
@@ -265,14 +288,25 @@ label jobs_rob_1:
                     "GG"
                     "No re."
                     return
-    "You pick up your dropped books and quickly run back to your dorm"
-    #jump bakerhouse_2
+    "You pick up your dropped books and quickly run back to your dorm."
+    "How did he know your name?"
+    jump bakerhouse_2
 
-#label bakerhouse_2:
-    
+#The second time you arrive at Bakerhouse. This is where
+#you make the important story line choice.
+label bakerhouse_2:
+    scene bg dorm
 
+    show stallman relaxed
+    stallman "Hey Lain! Is everything okay? You look scared."
+    lain "Y-yeah. Just tired."
+    stallman "Lain, I was wondering..."
+    stallman "Would you like to go for lunch?"
 
-
-
-
-
+    #This is where shit gets real.
+    #You can choose to go to lunch with stallman, and that will cause the rest
+    #of the game to follow the Stallman path. Or you can choose to go inside,
+    #and phone Torvalds to start the torvalds fork.
+    menu:
+        "No - I'm sorry, I've something to do. (Go and phone Torvalds)":
+        "Yes - That sounds great!":

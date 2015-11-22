@@ -25,6 +25,14 @@ Getting robbed by Steve Jobs:
 ##Contribute
 Gibe suggestions pls. Email at: gitgood@outlook.com
 
+###TODO:
+
+* Make dialogue better.
+* Develop story line.
+* Better, more meme-filled characters.
+* Sound effects.
+* Release Alpha build.
+
 ##Licence
 Copyright (c) <2015> <"gitgood">
 
