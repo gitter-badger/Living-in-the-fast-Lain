@@ -47,6 +47,7 @@ label start:
     $ gave_email = False
 
     stop music
+    play music "resources/music/outofsilencev2.ogg"
     scene bg uni
     "This is it. Your first day at the famous MIT!"
     "It's been a long day at orientation, and you want nothing more than to sleep."
@@ -101,9 +102,9 @@ label start:
     lain "Thank you."
 
     stallman "I'm getting hungry. Follow me!"
-    jump bakerhouse
+    jump bakerhouse_1
 
-label bakerhouse:
+label bakerhouse_1:
     play sound "resources/sounds/door-open.wav"
     scene bg dorm
     "The dorm was only a short walk from where you met Stallman, but he seems to be having trouble breathing."
@@ -157,6 +158,7 @@ label bedroom_night:
             "If everything went to plan, your browser opened at SICP. Read it then!"
             "You've read SICP deep in to the night, until you drift off."
         "Fall asleep":
+            stop music
             "You lie down on the bed. Almost the second you do, you fall asleep. You must've needed it!"
 
     jump bedroom_morning
@@ -263,7 +265,11 @@ label jobs_rob_1:
                     "GG"
                     "No re."
                     return
+    "You pick up your dropped books and quickly run back to your dorm"
+    #jump bakerhouse_2
 
+#label bakerhouse_2:
+    
 
 
 
