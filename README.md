@@ -1,5 +1,7 @@
 #Living in the Fast Lain
 
+[![Join the chat at https://gitter.im/gitgood/Living-in-the-fast-Lain](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gitgood/Living-in-the-fast-Lain?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##Description:
 You play as Lain Iwakura, a 19 year old Japanese exchange student who has just transferred to MIT! She develops a unique friendship (and maybe more?) with none other than Richard Stallman. 
 
