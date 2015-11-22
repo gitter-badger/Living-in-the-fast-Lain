@@ -17,6 +17,9 @@ Meeting Stallman:
 
 ![Stallman](/screenshots/stallman.png)
 
+Getting robbed by Steve Jobs:
+
+![Jobs](/screenshots/jobs.jpg)
 ##Contribute
 Gibe suggestions pls. Email at: gitgood@outlook.com
 
